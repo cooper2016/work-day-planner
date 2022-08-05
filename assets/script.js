@@ -1,7 +1,8 @@
 // save reference to important DOM Elements
 var timeDisplayEl = $('#currentDay');
-var containerEl = $('#container')
-var spanEl = $('span')
+var containerEl = $('#container');
+var spanEl = $('span');
+var textAreaEl = $('textarea');
 
 //used to travese span elements
 var s = 0;
@@ -9,7 +10,8 @@ var s = 0;
 
 function init(){
     displayDate();
-    timeBlock();
+    setTimeBlockContent();
+    findIfPPF();
 }
 
 //Display current date at the top of the planner
@@ -39,13 +41,8 @@ times = [
 function setTimeBlockContent(){
    for(var i = 0; i < times.length; i++){
        spanEl[s].textContent = times[i];
-       s++;  
-       console.log(spanEl)  
+       s++;   
     }
-}
-
-function setTextAreaColor(){
-    
 }
 
 
@@ -53,16 +50,48 @@ function setTextAreaColor(){
 //color code timeblocks based on past preset and future
 function findIfPPF(){
     //get current time
+    currentTime = moment().format('H');
 
-    //
+    console.log(currentTime);
+    console.log(textAreaEl);
+
+    for(var i = 0; i < textAreaEl.length; i++){
+        if(textAreaEl[i].id < currentTime){
+            textAreaEl[i].addClass('past');
+        }
+    }
+
+
+    // textAreaEl.each(function(index){
+    //     index = 0;
+        
+
+
+
+
+
+
+
+    
+    // })
+    
+    //check to see if the time is before current time
+
+    //set text area class to past
+
+    //check to see if the time is equal to the current hour
+
+    //set text area class to present
+
+    //check to see if the time is in the future
+
+    //set text area class to future
     
 }
 
-//Can type into time block to create an event
-
 //select save time block to save event in locale storage
 
-//make saved events banner come down
+//have saved events banner come down
 
 
 
