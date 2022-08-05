@@ -52,13 +52,20 @@ function findIfPPF(){
     //get current time
     currentTime = moment().format('H');
 
-    console.log(currentTime);
-    console.log(textAreaEl);
+    currentTime = Number(currentTime);
 
     for(var i = 0; i < textAreaEl.length; i++){
-        if(textAreaEl[i].id < currentTime){
-            textAreaEl[i].addClass('past');
+        var id =  Number(textAreaEl[i].id);
+
+        if(id < currentTime){
+            textAreaEl[i].classList.add('past');
+        }else if(id = currentTime){
+            textAreaEl[i].classList.add('present');
+        }else {
+            textAreaEl[i].classList.add('future');
         }
+
+
     }
 
 
