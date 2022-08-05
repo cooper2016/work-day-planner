@@ -36,6 +36,10 @@ textarea {
 
 }
 
+.custom-align{
+  margin-left: -8px;
+}
+
 
 .hour {
   background-color: #ffffff;
