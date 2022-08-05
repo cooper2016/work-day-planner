@@ -11,7 +11,6 @@ var s = 0;
 function init(){
     displayDate();
     setTimeBlockContent();
-    findIfPPF();
 }
 
 //Display current date at the top of the planner
@@ -56,44 +55,22 @@ function findIfPPF(){
 
     for(var i = 0; i < textAreaEl.length; i++){
         var id =  Number(textAreaEl[i].id);
-
+        
+        //check to see if the time is before current time
         if(id < currentTime){
+           //set text area class to past
             textAreaEl[i].classList.add('past');
-        }else if(id = currentTime){
+        //check to see if the time is equal to the current hour
+        }else if(id === currentTime){
+            //set text area class to present
             textAreaEl[i].classList.add('present');
         }else {
+            //Set all others to future
             textAreaEl[i].classList.add('future');
         }
 
-
     }
 
-
-    // textAreaEl.each(function(index){
-    //     index = 0;
-        
-
-
-
-
-
-
-
-    
-    // })
-    
-    //check to see if the time is before current time
-
-    //set text area class to past
-
-    //check to see if the time is equal to the current hour
-
-    //set text area class to present
-
-    //check to see if the time is in the future
-
-    //set text area class to future
-    
 }
 
 //select save time block to save event in locale storage
@@ -105,4 +82,6 @@ function findIfPPF(){
 
 
 init();
+
+setInterval(findIfPPF(),60000)
 
