@@ -13,6 +13,7 @@ function init(){
     displayDate();
     setTimeBlockContent();
     findIfPPF();
+    lookForDescription();
 }
 
 //Display current date at the top of the planner
@@ -75,9 +76,14 @@ function findIfPPF(){
 
 }
 
-function lookForDesc(){
+function lookForDescription(){
     for(var i = 0; i < textAreaEl.length; i++){
-        
+       
+        var id =  textAreaEl[i].id;
+         
+        var storageId = localStorage.getItem(id);
+        console.log(storageId);
+        textAreaEl[i].value = storageId;
     }
 }
 
