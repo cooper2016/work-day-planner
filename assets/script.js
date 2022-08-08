@@ -93,6 +93,9 @@ function saveDescription(event){
 
 }
 
+containerEl.addEventListener("click", saveDescription);
+
+
 //have saved events banner come down
 
 
@@ -100,6 +103,5 @@ function saveDescription(event){
 
 
 init();
-containerEl.on('click', '.saveBtn', saveDescription);
 setInterval(findIfPPF,60000);
 
