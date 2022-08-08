@@ -3,6 +3,7 @@ var timeDisplayEl = $('#currentDay');
 var containerEl = $('#container');
 var spanEl = $('span');
 var textAreaEl = $('textarea');
+var buttonEl = $('button')
 
 //used to travese span elements
 var s = 0;
@@ -11,6 +12,7 @@ var s = 0;
 function init(){
     displayDate();
     setTimeBlockContent();
+    findIfPPF();
 }
 
 //Display current date at the top of the planner
@@ -73,12 +75,14 @@ function findIfPPF(){
 
 }
 
+
+
 //select save time block to save event in locale storage
-function save(event){  
-    event.preventdefault();
-
+function saveDescription(event){  
+    var btnClicked = $(event.target);
     //get contents from text area 
-
+    console.log(btnClicked);
+    console.log('hi');
     //save to local storage using id as key
 
 
@@ -96,6 +100,6 @@ function save(event){
 
 
 init();
-
+containerEl.on('click', '.saveBtn', saveDescription);
 setInterval(findIfPPF,60000);
 
