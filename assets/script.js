@@ -1,6 +1,6 @@
 // save reference to important DOM Elements
 var timeDisplayEl = $('#currentDay');
-var containerEl = $('#container');
+var containerEl = $('.container');
 var spanEl = $('span');
 var textAreaEl = $('textarea');
 var buttonEl = $('button')
@@ -75,33 +75,30 @@ function findIfPPF(){
 
 }
 
+function lookForDesc(){
+    for(var i = 0; i < textAreaEl.length; i++){
+        
+    }
+}
+
 
 
 //select save time block to save event in locale storage
 function saveDescription(event){  
     var btnClicked = $(event.target);
-    //get contents from text area 
-    console.log(btnClicked);
-    console.log('hi');
-    //save to local storage using id as key
+    var prev;
 
-
-
-
-
-
-
+    //save to local storage using id as ke
+    prev = btnClicked.prev();
+    localStorage.setItem(prev.attr('id'), prev.val());
 }
 
-containerEl.addEventListener("click", saveDescription);
-
-
-//have saved events banner come down
 
 
 
 
 
 init();
+containerEl.on("click", '.saveBtn' ,saveDescription);
 setInterval(findIfPPF,60000);
 
