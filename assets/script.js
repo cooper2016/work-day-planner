@@ -74,6 +74,20 @@ function findIfPPF(){
 }
 
 //select save time block to save event in locale storage
+function save(event){  
+    event.preventdefault();
+
+    //get contents from text area 
+
+    //save to local storage using id as key
+
+
+
+
+
+
+
+}
 
 //have saved events banner come down
 
@@ -83,5 +97,5 @@ function findIfPPF(){
 
 init();
 
-setInterval(findIfPPF(),60000)
+setInterval(findIfPPF,60000);
 

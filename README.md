@@ -7,7 +7,7 @@ In this challenge we wanted to create a work day planner that let you write even
 
 This is what the program should look like :
 
-![Image of Weekday Planner](./assets/images/WorkdayScreenshot.png)
+![Image of Weekday Planner Website](./assets/images/WorkdayScreenshot.png)
 
 # Link
 
